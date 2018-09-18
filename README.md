@@ -2,18 +2,21 @@
 
 ## Problem Statement
 
-When you take a look at an entire HTML document, it's sometimes challenging to
-keep track of where tags begin and end. But understanding more about HTML tag
-nesting and attributes can help everything fall into place.
+HTML elements are like boxes that hold content. You can think of the structure somewhat
+like a Matryoshka doll set, which has a wooden doll, inside of a wooden doll, and 
+so on. These HTML elements that are "inside" of other are what are known as 
+"nested elements", and they are essential to building web pages of any kind.
 
 ## Objectives
 
 1. Assess HTML document structure
+2. Explain the Depth (Integer) of an HTML Tag Node Within the Document
+3. Identify Invalid Nesting
 
 ## Assess HTML Document Structure
-Whenever we nest an HTML tag inside of another tag, we indent the inner tag so
-that the overall tag hierarchy is clear. Take a look at the following example of
-a well-structured HTML document.
+
+Nesting is a fundamental feature of the HTML document. Take a look at the following
+example of a well-structured HTML document:
 
 ```html
 <!DOCTYPE html>
@@ -41,21 +44,53 @@ a well-structured HTML document.
   </body>
 </html>
 ```
+It's easy to see the document structure with the inner tags indented. 
+However, note that nested elements may not always be placed on separate,
+indented lines. 
 
-Keeping your HTML well indented so that every tag and "level" of nesting is
-aligned will make your code easier to read and maintain. It also helps us keep
-to separate content and keep blocks of information organized. 
+## Explain the Depth (Integer) of an HTML Tag Node Within the Document
 
-**NOTE:** Nested tags may not always appear on separate, individual indented lines. 
-Nested tags can appear in a single line, with opening and closing tags inside
-of another opened tag that represents the nested elements in HTML.
+The topmost tree nodes in the HTML document structure are `<html>`, `<body>`, and `<head>`.
+Understanding HTML nesting allows us to be able to manipulate HTML elements and their contents.
+Child nodes are elements that are direct children of a given node. In other words, they are
+nested exactly in its parent. For example, `<head>` and `<body>` are children of `<html>` element.
+Descendants are _all_ elements that are nested in the parent node. For example, `<header>`,
+`<nav>`, and `<ul>`, `<li>` are all children of `<body>` or `<html>` element. Why is this important?
+This will be more valuable as we start to apply styles or perform operations on the DOM. Both start
+with the document object and from it we can access or reference any node.
+
+
+## Identify Invalid Nesting
+
+When tags are nested, it is important that they are closed in the opposite order
+that they were opened. Valid HTML allows for accessibility and browser compatibility.
+If your HTML is incorrectly nested, it won't be as accessible to screen readers and
+older browsers. It could can also break the visual appearance of a page if the
+browsers cannot render the page properly because HTML elements and tags are unclosed
+or out of place.
+
+```html
+<li><a href="/html">Learn HTML</li>
+```
+
+In the example above, the `<a>` tag is unclosed. This may cause the rest of the document
+following this element to inherit the properties of this link.
+
+```html
+<li><a href="/html">Learn HTML</li></a>
+```
+
+The above HTML is also invalid, and may cause unpredictable behavior in the page.
+It can be challenging to keep track of where content begins and ends. Keeping your
+HTML well indented so that every tag and "level" of nesting is aligned will make
+your code easier to read and maintain. It also helps us keep to separate content
+and keep blocks of information organized.
 
 ## Conclusion
 
-We use nesting to keep the elements of our HTML document organized, and we use
-attributes to give our elements more power. With these strategies, we can
-construct a solid HTML structure that serves as a foundation for anything else
-we want to build.
+We use nesting to keep the elements of our HTML document organized into containers
+of content. With valid and well-written HTML, we can construct a solid page structure
+that serves as a foundation for anything else we want to build.
 
 ## Resources
 
