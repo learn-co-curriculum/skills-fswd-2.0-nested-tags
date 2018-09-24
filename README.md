@@ -4,6 +4,7 @@
 
 HTML elements are like boxes that hold content. You can think of the structure somewhat
 like a Matryoshka doll set, which has a wooden doll, inside of a wooden doll, and 
+**This is a bit of a culturally specific reference. Would it be better to use something like an onion?**
 so on. These HTML elements that are "inside" of other are what are known as 
 "nested elements", and they are essential to building web pages of any kind.
 
@@ -47,6 +48,7 @@ example of a well-structured HTML document:
 It's easy to see the document structure with the inner tags indented. 
 However, note that nested elements may not always be placed on separate,
 indented lines. 
+**I like this note**
 
 ## Explain the Depth (Integer) of an HTML Tag Node Within the Document
 
@@ -58,7 +60,7 @@ Descendants are _all_ elements that are nested in the parent node. For example, 
 `<nav>`, and `<ul>`, `<li>` are all children of `<body>` or `<html>` element. Why is this important?
 This will be more valuable as we start to apply styles or perform operations on the DOM. Both start
 with the document object and from it we can access or reference any node.
-
+**This whole paragraph feels a bit dense. It's a lot of vocab in a very small space (tree nodes, child nodes, nested, descendents), that we feel pretty comfortable with as developers, but might be really scary with to newbies. I think it just need a little explanation that elements can also be referred to as nodes, since it's not specified before this.**
 
 ## Identify Invalid Nesting
 
